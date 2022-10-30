@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style type="text/css">
+        TABLE {
+            width: 300px; /* Ширина таблицы */
+            border-collapse: collapse; /* Убираем двойные линии между ячейками */
+        }
+        TD, TH {
+            padding: 3px; /* Поля вокруг содержимого таблицы */
+            border: 1px solid black; /* Параметры рамки */
+        }
+        TH {
+            background: #b0e0e6; /* Цвет фона */
+        }
+    </style>
+</head>
+<body>
+<table>
+    <th>Id</th><th>Name</th><th>Color</th>
+    <tbody th:each="car : ${cars}">
+    <tr>
+        <td th:text="${car.getId()}"></td>
+        <td th:text="${car.getName()}"></td>
+        <td th:text="${car.getColor()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
